@@ -1,56 +1,46 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-card flat tile>
+      
+      <v-toolbar dark padless color=blue>
+        <v-app-bar-nav-icon to="/"></v-app-bar-nav-icon>
+  
+        <v-toolbar-title>Annuity Management</v-toolbar-title>
+  
+        <v-spacer></v-spacer>
+  
+        <v-btn depressed ripple color="success" to="/signup">Sign Up</v-btn>
+        <v-btn depressed ripple color="success" to="/login">Login</v-btn>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      </v-toolbar>
+      <!-- <Header/> -->
+      <v-content>
+        <!-- Below uses Vue Router to dynamically update the content of our page
+        with the view that we assign via the 'to' attribute -->
+        <router-view/> 
+      </v-content>
 
-      <v-spacer></v-spacer>
+      <v-footer dark padless color=blue>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+        <v-spacer></v-spacer>
+           <strong>Nationwide</strong> &copy; {{ new Date().getFullYear() }}
+        <v-spacer></v-spacer>
+      </v-footer>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
+    </v-card>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+// import Header from './components/Header'
+// import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    // Header,
+    // HelloWorld,
   },
 
   data: () => ({

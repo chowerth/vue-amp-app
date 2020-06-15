@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App. Now with Vue Router."/>
+  <div>
+    <HelloWorld msg="Welcome to Annuity Management System"/>
   </div>
 </template>
 
