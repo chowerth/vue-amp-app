@@ -1,17 +1,29 @@
 <template>
-  <div>
-    <HelloWorld msg="Welcome to Annuity Management System"/>
+<div>
+  <HeaderFooter >    
+  <HomeComponent />
+  </HeaderFooter>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HomeComponent from "@/components/HomeComponent.vue";
+import HeaderFooter from "@/layouts/HeaderFooter";
+// import AppLayout from "@/layouts/AppLayout.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
+    HomeComponent,
+    HeaderFooter
+  },
+  created() {
+    this.$emit(`update:layout`, HeaderFooter);
+    // When Vue Router navigates to the Home screen
+    // upon creation...update the layout to AppLayout in App.vue
+    // then router will display this view inside that component (since it is surrounding router)
+    // this.$emit(`update:layout`, AppLayout);
   }
-}
+};
 </script>
